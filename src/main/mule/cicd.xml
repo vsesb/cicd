@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="252cb2e9-0cd7-40ba-98c2-a431c6b5a8c6" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="cicdFlow" doc:id="4957d7ac-fef1-469f-94df-cfe7f1fa8693" >
+		<http:listener doc:name="Listener" doc:id="25570c48-0ca4-400c-9760-19534189b8f7" config-ref="HTTP_Listener_config" path="/cicd"/>
+		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="a3345623-8185-4454-9ae7-9bd1e2941232" />
+		<logger level="INFO" doc:name="Logger" doc:id="ccff2bfa-f258-4732-86d1-9074c25118e7" message="testing cicd..."/>
+	</flow>
+</mule>
