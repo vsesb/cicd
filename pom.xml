@@ -31,9 +31,13 @@
 					      <muleVersion>4.2.2</muleVersion>
 					      <username>vsava20</username>
 					      <password>Vsava20</password>
-					      <applicationName>CICD-Integration</applicationName>
+					      <applicationName>cicd-intg</applicationName>
 					      <environment>Sandbox</environment>
+					      <workerType>Micro</workerType>
+					      <workers>1</workers>
+					      <objectStoreV2>true</objectStoreV2>
 					      <properties>
+					        <key>value</key>
 					      </properties>
 					  </cloudHubDeployment>
 				</configuration>
